@@ -11,8 +11,13 @@ public class Main {
         //problem three
         System.out.println(problemThree(30,12));
         //problem four
-        System.out.println(32);
-
+        System.out.println(problemFour(32));
+        //problem five
+       // System.out.println(problemFive(5));
+        //probelm six
+        System.out.println(problemSix(35,8));
+        //problem eight
+        System.out.println(problemEight(problemEight(problemEight(problemEight(18)))));
     }
 
     //recursive method 1
@@ -49,12 +54,43 @@ public class Main {
 
     public static int problemFour(int x) {
         if ((x % 2) == 0) {
-            return problemFour(x/2 - 1) + 3;
+            return problemFour((x/2) - 1) + 3;
         } else if (x > 0) {
             return 2 * problemFour(x - 3) - 5;
         } else {
-            return x * x - 3;
+            return (x * x) - 3;
         }
     } // end problemFour
 
-}
+    //problem five currently broken
+    public static int problemFive(int x) {
+        if (x == 1) {
+            return 8;
+        } else {
+            return (2 * problemFive(x)) - 4;
+        }
+    } // end problem 5
+
+    //problem six
+    public static int problemSix(int x, int y) {
+        if (x >= y) {
+            return problemSix(x - y, y + 2);
+        } else {
+            return (x * x) - y;
+        }
+    }
+
+    //problem seven
+
+    //problem eight
+    public static int problemEight(int x) {
+        if (x >= 10) {
+            return problemEight(x - 5) - 2;
+        } else if(7 <= x && x < 10){
+            return problemEight(x + 4) + 6;
+        } else {
+            return x - 4;
+        }
+    }
+
+} //end main
