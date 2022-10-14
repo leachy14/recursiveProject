@@ -5,19 +5,21 @@ public class Main {
     int y;
     public static void main(String[] args) {
         //problem one
-        System.out.println(problemOne(8,12));
+        System.out.println("Problem one: " + problemOne(8,12));
         //problem two
-        System.out.println(problemTwo(problemTwo(problemTwo(problemTwo(problemTwo(10))))));
+        System.out.println("Problem two: " + problemTwo(problemTwo(problemTwo(problemTwo(problemTwo(10))))));
         //problem three
-        System.out.println(problemThree(30,12));
+        System.out.println("Problem three: " + problemThree(30,12));
         //problem four
-        System.out.println(problemFour(32));
+        System.out.println("Problem four: " + problemFour(32));
         //problem five
-       // System.out.println(problemFive(5));
+        System.out.println("Problem five: " + problemFive(5));
         //probelm six
-        System.out.println(problemSix(35,8));
+        System.out.println("Problem six: " + problemSix(35,8));
+        //problem seven
+        System.out.println("Problem seven: " + loopForSeven());
         //problem eight
-        System.out.println(problemEight(problemEight(problemEight(problemEight(18)))));
+        System.out.println("Problem eight: " + problemEight(problemEight(problemEight(problemEight(18)))));
     }
 
     //recursive method 1
@@ -62,12 +64,12 @@ public class Main {
         }
     } // end problemFour
 
-    //problem five currently broken
+    //problem five
     public static int problemFive(int x) {
         if (x == 1) {
             return 8;
         } else {
-            return (2 * problemFive(x)) - 4;
+            return (2 * problemFive(x - 1)) - 4;
         }
     } // end problem 5
 
@@ -81,6 +83,21 @@ public class Main {
     }
 
     //problem seven
+    public static int problemSeven(int x) {
+        if (x == 1) {
+            return 1;
+        } else {
+            return problemSeven(x - 1) + 5;
+        }
+    }
+
+    public static int loopForSeven() {
+        int sum = 0;
+        for (int i = 10; i >= 1; i--) {
+            sum += problemSeven(i);
+        }
+        return sum;
+    }
 
     //problem eight
     public static int problemEight(int x) {
